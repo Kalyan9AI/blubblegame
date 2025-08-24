@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Bubble Pop!</title>
+  <meta name="description" content="A fast, fun bubble popping game. Click or tap to pop!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>Bubble Pop!</h1>
+    </header>
+
+    <section id="hud" class="hud" aria-live="polite">
+      <div class="stat"><span class="label">Score</span><span id="scoreValue" class="value">0</span></div>
+      <div class="stat"><span class="label">Time</span><span id="timeValue" class="value">60</span><span class="suffix">s</span></div>
+      <div class="stat"><span class="label">Best</span><span id="bestValue" class="value">0</span></div>
+      <button id="muteButton" class="icon-btn" aria-pressed="false" aria-label="Toggle sound">🔊</button>
+    </section>
+
+    <main id="game" class="game" role="application" aria-label="Game area" tabindex="0"></main>
+
+    <section id="controls" class="controls">
+      <button id="startButton" class="primary">Start</button>
+      <button id="restartButton" class="secondary" hidden>Restart</button>
+    </section>
+
+    <section id="overlay" class="overlay" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h2 id="modalTitle">Time's up!</h2>
+        <p>Your score: <strong id="finalScore">0</strong></p>
+        <p>Best: <strong id="finalBest">0</strong></p>
+        <div class="modal-actions">
+          <button id="playAgainButton" class="primary">Play again</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>Click or tap bubbles to score. Bigger bubbles are worth fewer points.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+  <noscript>This game requires JavaScript.</noscript>
+</body>
+</html>
+
+
